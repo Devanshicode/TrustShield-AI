@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TrustShield AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#top"><i data-logo></i>TrustShield AI</a><a class="l" href="#scan">Scanner</a><a class="l" href="#benefits">Benefits</a><a class="l" href="#play">Play</a><a class="l" href="#how">How it works</a><a class="l" href="#papers">Research</a><button class="btn alt" id="theme" aria-label="Toggle dark mode"><span data-i="moon"></span></button></div></nav>
+
+<div class="wrap" id="top">
+<header class="hero"><div>
+  <div class="pills"><span>🔒 Private</span><span>⚡ Instant</span><span>🆓 Free</span><span>🧠 Explains why</span></div><h1>Check it before you click it.</h1>
+  <p>Paste a link, an SMS or scan a QR code. TrustShield AI tells you the risk level, the scam type, how sure it is, and why, in plain language.</p>
+  <div class="stats"><div class="stat"><b id="s1">0</b><small>scans this session</small></div><div class="stat"><b id="s2">0</b><small>threats flagged</small></div><div class="stat"><b>23</b><small>link clues checked</small></div></div>
+</div><div class="orbit"><div class="path"></div><div class="core" data-logo></div>
+<button style="--i:0" data-t="🎣 Phishing = fake messages fishing for your OTP" aria-label="Phishing tip">🎣</button>
+<button style="--i:1" data-t="🔗 Long, hyphen-filled links are a red flag" aria-label="Link tip">🔗</button>
+<button style="--i:2" data-t="📷 QR codes can hide bad links. We check first" aria-label="QR tip">📷</button>
+<button style="--i:3" data-t="💬 Real banks never ask for your OTP" aria-label="SMS tip">💬</button>
+<button style="--i:4" data-t="🎁 You cannot win a lottery you never entered" aria-label="Prize tip">🎁</button></div></header>
+
+<div class="tool" id="scan">
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-t="url"><span data-i="link"></span>URL</button>
+    <button class="tab" data-t="sms"><span data-i="msg"></span>SMS</button>
+    <button class="tab" data-t="qr"><span data-i="qr"></span>QR code</button>
+  </div>
+  <div class="grid"><div>
+    <div class="pane on" id="p-url">
+      <label class="h" for="u">Link to check</label><input type="text" id="u" placeholder="https://example.com/login" autocomplete="off">
+      <div class="samples" data-for="u"></div><button class="btn" id="bu"><span data-i="scan"></span>Scan link</button>
+    </div>
+    <div class="pane" id="p-sms">
+      <label class="h" for="m">Paste the message</label><textarea id="m" placeholder="Paste a suspicious SMS or WhatsApp message here"></textarea>
+      <div class="samples" data-for="m"></div><button class="btn" id="bm"><span data-i="scan"></span>Scan message</button>
+    </div>
+    <div class="pane" id="p-qr">
+      <div class="vid" id="vid"><video id="video" playsinline muted></video><div class="fr"></div><div class="msg"><span data-i="cam" style="font-size:40px"></span><p>Start the camera to scan a QR code. The link is checked, never opened.</p></div></div>
+      <canvas id="cv" hidden></canvas>
+      <div class="row"><button class="btn" id="qs"><span data-i="cam"></span>Start camera</button><button class="btn alt" id="qx" hidden>Stop</button>
+      <label class="btn alt" style="cursor:pointer"><span data-i="img"></span>Upload QR<input type="file" id="qf" accept="image/*" hidden></label><button class="btn alt" id="qd">Demo scan</button></div>
+    </div>
+  </div>
+  <div class="res" id="res"><div class="empty"><span data-i="shield" style="font-size:44px"></span><p>Your result will appear here.<br>Try a sample to see how it works.</p></div></div></div>
+  <div class="hist"><b>Recent scans</b><ul id="hist"><li style="color:var(--mute)">Nothing yet.</li></ul></div>
+</div>
+
+<section id="benefits"><h2>Why use TrustShield AI 🛡️</h2><p class="sub">Safer taps, fewer scams, and no sign-up.</p>
+<div class="ben"><div class="phone rv"><div class="notch"></div>
+<div class="bub in" style="--d:0">🎁 Congrats! You won ₹25 lakh. Claim: free-reward-claim.xyz</div>
+<div class="bub warn" style="--d:1">🚨 High risk · Prize scam · 94%</div>
+<div class="bub in" style="--d:2">Lab test moved to 3 pm tomorrow.</div>
+<div class="bub ok" style="--d:3">😌 Looks safe · 4/100</div></div>
+<div class="bg">
+<div class="bc rv"><span class="e">🛡️</span><h3>Stops scams before the click</h3><p>Risky links and messages are flagged while you can still say no.</p></div>
+<div class="bc rv"><span class="e">⚡</span><h3>Answers in a blink</h3><p>Text-only clues mean no waiting and no visiting dangerous sites.</p></div>
+<div class="bc rv"><span class="e">🔒</span><h3>Private by design</h3><p>Everything runs in your browser. Your messages are not uploaded.</p></div>
+<div class="bc rv"><span class="e">🧠</span><h3>Tells you why</h3><p>Plain-language reasons, so you learn to spot scams yourself.</p></div>
+<div class="bc rv"><span class="e">📷</span><h3>Safe QR scanning</h3><p>See what a QR code hides before your phone opens it.</p></div>
+<div class="bc rv"><span class="e">🆓</span><h3>Free and simple</h3><p>No account, no app install. Works on phone and laptop.</p></div></div></div>
+<div class="nums rv"><div><b data-n="23">0</b><small>link clues checked</small></div><div><b data-n="4">0</b><small>scam types spotted</small></div><div><b data-n="92" data-s="%">0</b><small>FireEye model accuracy</small></div><div><b data-n="0">0</b><small>sign-ups needed</small></div></div></section>
+
+<section id="play"><h2>Test your scam radar 🎯</h2><p class="sub">Five messages. Scam or safe?</p>
+<div class="game rv"><div id="gq"></div><div id="gf"></div><div id="gb"></div></div></section>
+
+<section id="how"><h2>Two layers, one clear answer</h2><p class="sub">Built from what the six reviewed papers found works, and what they left open.</p>
+<div class="flow">
+<div class="fc"><div class="ic" data-i="code"></div><h3>Layer 1: link clues</h3><p>A fast text-only check using the FireEye-style lexical clues: length, dots, hyphens, IP hosts, odd endings and more. No need to open the site.</p></div>
+<div class="fc"><div class="ic" data-i="globe"></div><h3>Layer 2: reputation</h3><p>A second opinion for links that look clean but are known bad. This demo uses a small local list; a live Google Safe Browsing check needs a server.</p></div>
+<div class="fc"><div class="ic" data-i="msg"></div><h3>Scam text classes</h3><p>Messages are sorted into phishing, fake job, fake loan or prize scam, each with a confidence score and reasons.</p></div>
+<div class="fc"><div class="ic" data-i="qr"></div><h3>QR safety</h3><p>Codes are read on your device, then the hidden link goes through the same two layers before you ever visit it.</p></div></div></section>
+
+<section id="papers"><h2>Grounded in six papers</h2><p class="sub">Tap a paper to see what it gave TrustShield AI.</p><div class="papers" id="pp"></div></section>
+</div>
+<footer><div class="wrap"><span class="brand"><i data-logo></i>TrustShield AI</span><span style="opacity:.75">College project demo. Scores are heuristic, not a guarantee of safety.</span></div></footer>
+<div id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
