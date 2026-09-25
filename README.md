@@ -34,7 +34,7 @@ EMSCAD (fake job ads), plus your own collected examples for fake loans.
 python train_sms.py --csv sms_data.csv
 ```
 
-## 3. Layer 2: Google Safe Browsing (optional but recommended)
+## 3. Layer 2: Google Safe Browsing (optional )
 Create a free API key in Google Cloud (enable "Safe Browsing API"), then:
 ```bash
 export GSB_API_KEY=your_key_here          # Windows: set GSB_API_KEY=your_key_here
